@@ -41,8 +41,6 @@ class AddPostController extends Controller
 
     }
 
-
-
     function show(){
         return view('admin.list');
     }
