@@ -19,7 +19,7 @@
                             </div>
                              <div class="content-title">
                                 <div class="text-left">
-                                    {{ htmlspecialchars($text) }}
+                                    {{ addslashes($text) }}
                                 </div>
                             </div>
                         </aside>
