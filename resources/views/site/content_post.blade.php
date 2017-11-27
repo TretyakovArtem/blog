@@ -19,7 +19,7 @@
                             </div>
                              <div class="content-title">
                                 <div class="text-left">
-                                    <pre><code>{{ $text }}</code></pre>
+                                    {{ htmlspecialchars($text) }}
                                 </div>
                             </div>
                         </aside>
