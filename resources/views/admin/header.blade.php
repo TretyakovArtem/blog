@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><h5>Admin</h5></a>
+            <a class="navbar-brand" href="/admin"><h5>Admin</h5></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
 
