@@ -11,9 +11,11 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/styles/agate.css') }}">
     <script src="{{ asset('assets/highlight.pack.js') }}"></script>
-    <script>window.onload=function(){
+    <script>
+        $(document).ready(function() {
             hljs.initHighlightingOnLoad();
-        }</script>
+        });
+    </script>
     <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
 </head>
 
