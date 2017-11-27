@@ -19,6 +19,11 @@ Route::get('/posts/{id}', ['uses' => 'PostController@getPost', 'as'=>'post']);
 Route::get('/admin', ['uses' => 'AdminController@postsList', 'as'=>'list']);
 
 Route::group(['prefix'=>'admin'], function() {
-    Route::get('/add/post', ['uses'=>'Admin\AddPostController@show', 'as'=>'admin_add_post']);
-    Route::post('/add/post', ['uses'=>'Admin\AddPostController@create', 'as'=>'admin_add_post_p']);
+    Route::get('/post/add', ['uses'=>'Admin\AddPostController@show', 'as'=>'admin_add_post']);
+    Route::post('/post/add', ['uses'=>'Admin\AddPostController@create', 'as'=>'admin_add_post_p']);
+
+    Route::get('/post/{id}/edit', ['uses'=>'Admin\UpdatePostController@show', 'as'=>'admin_edit_post']);
+    Route::post('/post/{id}/edit', ['uses'=>'Admin\UpdatePostController@update', 'as'=>'admin_edit_post_p']);
+
+    Route::get('/posts', ['uses'=>'Admin\AdminController@getPosts', 'as'=>'admin_posts']);
 });

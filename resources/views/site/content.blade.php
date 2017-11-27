@@ -4,12 +4,11 @@
             <div class="col-lg-8">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <?dd($posts)?>
 
                         @if(isset($posts) && is_object($posts))
                             @foreach($posts as $post)
                                 <aside>
-                                    <img src="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg" class="img-responsive">
+                                    <img src="{{ asset('assets/img').'/'.$post->url }}" class="img-responsive">
                                     <div class="content-title">
                                         <div class="text-center">
                                             <h3><a href="/posts/{{ $post->id }}">{{ $post->name }}</a></h3>

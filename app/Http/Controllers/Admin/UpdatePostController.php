@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
-class AddPostController extends Controller
+class UpdatePostController extends Controller
 {
-
-    function create(Request $request){
+    function update(Request $request, $id){
         if($request->isMethod('post')) {
             $input = $request->except('_token');
-
 
             $validator = Validator::make($input, [
                 'name' => 'required|max:255',
@@ -21,7 +19,7 @@ class AddPostController extends Controller
                 'image' => 'required|file'
             ]);
 
-            $post = new Post;
+            $post = Post::find($id);
 
             $post->name = $input['name'];
             $post->text = $input['text'];
@@ -42,10 +40,20 @@ class AddPostController extends Controller
     }
 
 
+    function show($id){
 
-    function show(){
-        return view('admin.list');
+    	$data = Post::find($id);
+
+    	$post = [
+            'name' => $data->name,
+            'text' => $data->text,
+            'img'  => $data->url,
+            'id'   => $data->id
+        ];
+
+        //dd($post);
+
+        return view('admin.update', $post);
     }
-
 
 }

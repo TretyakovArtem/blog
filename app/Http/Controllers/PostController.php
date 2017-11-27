@@ -23,7 +23,8 @@ class PostController extends Controller
 
         $post = [
             'name' => $data->name,
-            'text' => $data->text
+            'text' => $data->text,
+            'img'  => $data->url
         ];
 
         return view('site.post', $post);

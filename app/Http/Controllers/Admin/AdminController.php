@@ -11,8 +11,8 @@ class AdminController extends Controller
     function getPosts() {
         $posts = Post::all();
 
-        if (view()->exists('admin.list')) {
-            return view('admin.list', ['posts' => $posts]);
+        if (view()->exists('admin.index')) {
+            return view('admin.index', ['posts' => $posts]);
         }
 
         abort(404);

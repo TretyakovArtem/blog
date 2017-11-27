@@ -5,10 +5,10 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <aside>
-                            <img src="https://lh3.googleusercontent.com/-ndZJOGgvYQ4/WM1ZI8dH86I/AAAAAAAADeo/l67ZqZnRUO8QXIQi38bEXuxqHfVX0TV2gCJoC/w424-h318-n-rw/thumbnail8.jpg" class="img-responsive">
+                            <img src="{{ asset('assets/img').'/'.$img }}" class="img-responsive">
                             <div class="content-title">
                                 <div class="text-center">
-                                    <h3><a href="#">{{ $name }}</a></h3>
+                                    <h3>{{ $name }}</h3>
                                 </div>
                             </div>
                             <div class="content-footer">
@@ -17,6 +17,11 @@
                                     <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                                     <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
                                 </span>
+                            </div>
+                             <div class="content-title">
+                                <div class="text-left">
+                                    <p>{{ $text }}</p>
+                                </div>
                             </div>
                         </aside>
                     </div>
