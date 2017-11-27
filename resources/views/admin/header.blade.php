@@ -9,11 +9,7 @@
             <a class="navbar-brand" href="#"><h5>Admin</h5></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">GitHub</a></li>
-            </ul>
+
             <!-- Right Side Of Navbar -->
 
             <ul class="nav navbar-nav">
