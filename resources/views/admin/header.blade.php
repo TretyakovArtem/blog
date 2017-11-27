@@ -42,6 +42,7 @@
                     </li>
                     @endguest
             </ul>
+            <a href="{{ route('admin_add_post') }}">Create</a>
         </div>
     </div>
 
