@@ -19,7 +19,7 @@
                             </div>
                              <div class="content-title">
                                 <div class="text-left">
-                                    {{ $text }}
+                                    <pre><code>{{ $text }}</code></pre>
                                 </div>
                             </div>
                         </aside>
