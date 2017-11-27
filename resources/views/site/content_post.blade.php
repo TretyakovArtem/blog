@@ -5,7 +5,6 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12">
                         <aside>
-                            <img src="{{ asset('assets/img').'/'.$img }}" class="img-responsive">
                             <div class="content-title">
                                 <div class="text-center">
                                     <h3>{{ $name }}</h3>
