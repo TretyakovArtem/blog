@@ -35,7 +35,7 @@ class UpdatePostController extends Controller
             $post->save();
         }
 
-        return view('admin.index');
+        return redirect('list');
 
     }
 
