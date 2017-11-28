@@ -10,7 +10,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ route('posts') }}">Home</a></li>
                 <li><a href="#">Контакты</a></li>
                 <li><a href="#">GitHub</a></li>
             </ul>

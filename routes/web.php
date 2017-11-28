@@ -13,7 +13,6 @@
 
 
 Route::get('/', ['uses' => 'PostController@getPosts', 'as'=>'posts']);
-
 Route::get('/posts/{id}', ['uses' => 'PostController@getPost', 'as'=>'post']);
 
 
