@@ -31,10 +31,10 @@ class AddPostController extends Controller
 
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
+                Image::make($file->getRealPath())->resize(360,203)->save();
                 $input['image'] = $file->getClientOriginalName();
                 $post->url = $input['image'];
                 $file->move(public_path() . '/assets/img', $input['image']);
-                Image::make($file->getRealPath())->resize(360,203)->save();
             }
 
             $post->save();
