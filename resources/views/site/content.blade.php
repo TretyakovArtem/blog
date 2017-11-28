@@ -3,10 +3,9 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="row">
-                    <div class="col-lg-6 col-md-6">
-
                         @if(isset($posts) && is_object($posts))
                             @foreach($posts as $post)
+                            <div class="col-lg-6 col-md-6">
                                 <aside>
                                     <img src="{{ asset('assets/img').'/'.$post->url }}" class="img-responsive">
                                     <div class="content-title">
@@ -22,9 +21,9 @@
                                         </span>
                                     </div>
                                 </aside>
+                            </div>
                             @endforeach
                         @endif
-                    </div>
                 </div>
             </div>
 
