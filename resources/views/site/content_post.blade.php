@@ -19,7 +19,7 @@
                             </div>
                              <div class="content-title">
                                 <div class="text-left">
-                                    {!! $text !!}
+                                    <p>{!! $text !!}</p>
                                 </div>
                             </div>
                         </aside>
