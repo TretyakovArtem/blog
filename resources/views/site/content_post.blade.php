@@ -11,7 +11,7 @@
                                 </div>
                             </div>
                             <div class="content-footer">
-                                <span style="font-size: 16px;color: #fff;">{{ $text }}</span>
+                                <!--<span style="font-size: 16px;color: #fff;">{{ /*$text*/ }}</span>-->
                                 <span class="pull-right">
                                     <a href="#" data-toggle="tooltip" data-placement="left" title="Comments"><i class="fa fa-comments" ></i> 30</a>
                                     <a href="#" data-toggle="tooltip" data-placement="right" title="Loved"><i class="fa fa-heart"></i> 20</a>
