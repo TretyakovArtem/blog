@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use Intervention\Image\Image;
+use Intervention\Image\ImageManagerStatic as Image;
 
 
 class AddPostController extends Controller
