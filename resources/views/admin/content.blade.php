@@ -10,7 +10,7 @@
             </div>
             <div class="col-xs-12 col-sm-9 col-md-9">
                 <h4><a href="/admin/post/{{ $post->id }}/edit">{{ $post->name }}</a></h4>
-                <p>{{ $post->text }}</p>
+                <p>{{ str_limit($post->text, 80) }}</p>
             </div>
         </div>
         <hr>
