@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Image;
+
 
 class AddPostController extends Controller
 {
@@ -32,6 +34,7 @@ class AddPostController extends Controller
                 $input['image'] = $file->getClientOriginalName();
                 $post->url = $input['image'];
                 $file->move(public_path() . '/assets/img', $input['image']);
+                Image::make($file->getRealPath())->resize(360,203)->save();
             }
 
             $post->save();
