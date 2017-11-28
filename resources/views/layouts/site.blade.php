@@ -9,7 +9,7 @@
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('assets/styles/agate.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/styles/androidstudio.css') }}">
     <script src="{{ asset('assets/highlight.pack.js') }}"></script>
 
     <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
