@@ -8,14 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 
-
 class AddPostController extends Controller
 {
 
     function create(Request $request){
         if($request->isMethod('post')) {
             $input = $request->except('_token');
-
 
             $validator = Validator::make($input, [
                 'name' => 'required|max:255',
@@ -28,7 +26,6 @@ class AddPostController extends Controller
             $post->name = $input['name'];
             $post->text = $input['text'];
 
-
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
                 Image::make($file->getRealPath())->resize(360,203)->save();
@@ -40,13 +37,12 @@ class AddPostController extends Controller
             $post->save();
         }
 
-        return view('admin.list');
+        return redirect('admin');
 
     }
 
     function show(){
         return view('admin.list');
     }
-
 
 }

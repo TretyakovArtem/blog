@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
-
 class UpdatePostController extends Controller
 {
     function update(Request $request, $id){
@@ -26,7 +25,6 @@ class UpdatePostController extends Controller
 
             $post->name = $input['name'];
             $post->text = $input['text'];
-
 
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
@@ -59,5 +57,4 @@ class UpdatePostController extends Controller
 
         return view('admin.update', $post);
     }
-
 }
