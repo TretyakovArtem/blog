@@ -13,17 +13,20 @@
 
 
 Route::get('/', ['uses' => 'PostController@getPosts', 'as'=>'posts']);
-
 Route::get('/posts/{id}', ['uses' => 'PostController@getPost', 'as'=>'post']);
 
-Route::get('/admin', ['uses' => 'AdminController@postsList', 'as'=>'list']);
 
-Route::group(['prefix'=>'admin'], function() {
+
+Route::group(['prefix'=>'admin', 'middleware'=>['auth','role:admin']], function() {
+    Route::get('/', ['uses' => 'Admin\AdminController@getPosts', 'as'=>'list']);
     Route::get('/post/add', ['uses'=>'Admin\AddPostController@show', 'as'=>'admin_add_post']);
     Route::post('/post/add', ['uses'=>'Admin\AddPostController@create', 'as'=>'admin_add_post_p']);
-
     Route::get('/post/{id}/edit', ['uses'=>'Admin\UpdatePostController@show', 'as'=>'admin_edit_post']);
-    Route::post('/post/{id}/edit', ['uses'=>'Admin\UpdatePostController@update', 'as'=>'admin_edit_post_p']);
 
+    Route::get('/post/{id}/delete', ['uses'=>'Admin\DeletePostController@delete', 'as'=>'admin_delete_post']);
+
+    Route::post('/post/{id}/edit', ['uses'=>'Admin\UpdatePostController@update', 'as'=>'admin_edit_post_p']);
     Route::get('/posts', ['uses'=>'Admin\AdminController@getPosts', 'as'=>'admin_posts']);
 });
+
+Auth::routes();

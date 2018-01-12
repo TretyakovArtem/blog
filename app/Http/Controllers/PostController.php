@@ -9,10 +9,18 @@ class PostController extends Controller
 {
     function getPosts() {
         $posts = Post::all();
+        $lastPosts = Post::all()->take(4);
+
 
         if (view()->exists('site.index')) {
-            return view('site.index', ['posts' => $posts]);
+            return view('site.index', [
+                'posts' => $posts,
+                'lastPosts' => $lastPosts
+            ]);
+
         }
+
+
 
         abort(404);
     }

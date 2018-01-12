@@ -38,6 +38,7 @@
             </div>
             {!! Form::close() !!}
 
+            <a href="{{ route('admin_delete_post', ['id' => $id]) }}" class="btn btn-warning">Удалить</a>
 
         </div>
 
