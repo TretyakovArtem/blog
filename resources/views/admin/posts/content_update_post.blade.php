@@ -20,13 +20,23 @@
                 {!! Form::textarea('text', $text, ['class'=>'form-control', 'placeholder'=> 'Текст', 'rows'=>'5']) !!}
             </div>
 
+            <div class="form-group">
+                <select class="selectpicker" multiple title="Тег">
+                    <option>Mustard</option>
+                    <option>Ketchup</option>
+                    <option>Relish</option>
+                </select>
+
+                <button class="btn btn-default">
+                    Создать тег
+                </button>
+            </div>
 
             <div class="form-group">
                 <div>
                     {!! Form::file('image', ['class'=>'filestyle', 'data-text'=>'Выберите изображение', 'data-btnClass'=>'btn-primary', 'data-placeholder'=>'Файла нет' ]) !!}
                 </div>
             </div>
-
 
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">
@@ -35,7 +45,9 @@
                 <button class="btn btn-default">
                     Cancel
                 </button>
+
             </div>
+
             {!! Form::close() !!}
 
             <a href="{{ route('admin_delete_post', ['id' => $id]) }}" class="btn btn-warning">Удалить</a>

@@ -10,6 +10,7 @@
     <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/admin-list.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css">
     <script src="https://use.fontawesome.com/07b0ce5d10.js"></script>
 </head>
 
@@ -24,6 +25,7 @@
 <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap-filestyle.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap-select.min.js') }}"></script>
 
 <script>
     $(document).ready(function(){

@@ -238,3 +238,13 @@ button.accordion.active:after {
     margin-top: 15px;
 }
 .input-group-addon{border-radius: 0px;}
+
+.filter-option{
+    color: white;
+}
+
+.btn-default:active:hover, .btn-default:hover, .btn-default:active, .btn-default.active, .open > .dropdown-toggle.btn-default, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {
+    color: #333;
+    background-color: #1e7f73;
+    border-color: #8c8c8c;
+}
