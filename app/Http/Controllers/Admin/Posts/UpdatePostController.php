@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Posts;
 
-use App\Http\Controllers\Controller;
-use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\ImageManagerStatic as Image;
 
-class AddPostController extends Controller
-{
 
-    function create(Request $request){
+class UpdatePostController extends Controller
+{
+    function update(Request $request, $id){
         if($request->isMethod('post')) {
             $input = $request->except('_token');
 
@@ -21,7 +21,7 @@ class AddPostController extends Controller
                 'image' => 'required|file'
             ]);
 
-            $post = new Post;
+            $post = Post::find($id);
 
             $post->name = $input['name'];
             $post->text = $input['text'];
@@ -41,8 +41,19 @@ class AddPostController extends Controller
 
     }
 
-    function show(){
-        return view('admin.list');
-    }
 
+    function show($id){
+
+    	$data = Post::find($id);
+
+    	$post = [
+            'name' => $data->name,
+            'text' => $data->text,
+            'img'  => $data->url,
+            'id'   => $data->id
+        ];
+
+
+        return view('admin.update', $post);
+    }
 }
