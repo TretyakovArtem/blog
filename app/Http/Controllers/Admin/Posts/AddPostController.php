@@ -42,7 +42,7 @@ class AddPostController extends Controller
     }
 
     function show(){
-        return view('admin.list');
+        return view('admin.posts.list');
     }
 
 }

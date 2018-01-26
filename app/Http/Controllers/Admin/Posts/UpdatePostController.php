@@ -54,6 +54,6 @@ class UpdatePostController extends Controller
         ];
 
 
-        return view('admin.update', $post);
+        return view('admin.posts.update', $post);
     }
 }

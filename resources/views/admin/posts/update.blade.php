@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-    @include('admin.content_post')
+    @include('admin.posts.content_update_post')
 @endsection
