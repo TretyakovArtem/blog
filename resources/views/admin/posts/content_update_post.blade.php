@@ -5,26 +5,28 @@
 
             <h1>Create post</h1>
 
-            {!! Form::open(['url'=>route('admin_edit_post_p', ['id'=>$id]), 'method' => 'POST', 'enctype'=>'multipart/form-data']) !!}
+            {!! Form::open(['url'=>route('admin_edit_post_p', ['id'=>$post->id]), 'method' => 'POST', 'enctype'=>'multipart/form-data']) !!}
 
 
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
                 {!! Form::label('name', 'Название', ['class' => 'require']) !!}
-                {!! Form::text('name', $name, ['class'=>'form-control', 'placeholder'=> 'Ссылка']) !!}
+                {!! Form::text('name', $post->name, ['class'=>'form-control', 'placeholder'=> 'Ссылка']) !!}
             </div>
 
             <div class="form-group">
                 {!! Form::label('text', 'Текст', ['class' => 'require']) !!}
-                {!! Form::textarea('text', $text, ['class'=>'form-control', 'placeholder'=> 'Текст', 'rows'=>'5']) !!}
+                {!! Form::textarea('text', $post->text, ['class'=>'form-control', 'placeholder'=> 'Текст', 'rows'=>'5']) !!}
             </div>
 
             <div class="form-group">
                 <select class="selectpicker" multiple title="Тег">
-                    <option>Mustard</option>
-                    <option>Ketchup</option>
-                    <option>Relish</option>
+                    @if(isset($tags) && is_object($tags))
+                        @foreach($tags as $tag)
+                            <option>{{ $tag->title }}</option>
+                        @endforeach
+                    @endif
                 </select>
 
                 <button class="btn btn-default">
@@ -50,7 +52,7 @@
 
             {!! Form::close() !!}
 
-            <a href="{{ route('admin_delete_post', ['id' => $id]) }}" class="btn btn-warning">Удалить</a>
+            <a href="{{ route('admin_delete_post', ['id' => $post->id]) }}" class="btn btn-warning">Удалить</a>
 
         </div>
 

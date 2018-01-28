@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\Posts;
 
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
@@ -44,16 +45,14 @@ class UpdatePostController extends Controller
 
     function show($id){
 
-    	$data = Post::find($id);
+    	$post = Post::find($id);
+        $tags = Tag::all();
 
-    	$post = [
-            'name' => $data->name,
-            'text' => $data->text,
-            'img'  => $data->url,
-            'id'   => $data->id
+    	$context = [
+            'post' => $post,
+            'tags' => $tags
         ];
 
-
-        return view('admin.posts.update', $post);
+        return view('admin.posts.update', $context);
     }
 }
