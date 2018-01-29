@@ -12,7 +12,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('posts') }}">Home</a></li>
                 <li><a href="{{ route('contacts') }}">Контакты</a></li>
-                <li><a href="#">GitHub</a></li>
+                <li><a href="https://github.com/TretyakovArtem">GitHub</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <form class="navbar-form navbar-left">
