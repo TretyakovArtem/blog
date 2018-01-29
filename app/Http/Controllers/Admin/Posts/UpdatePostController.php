@@ -38,7 +38,7 @@ class UpdatePostController extends Controller
                 $file->move(public_path() . '/assets/img', $input['image']);
             }
 
-            $post->tags()->attach($tags);
+            $post->tags()->sync($tags);
         }
 
         return redirect('admin');
