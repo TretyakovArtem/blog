@@ -21,7 +21,7 @@ class ContactController extends Controller
                  'name'=>'required'
              ], $messages);
              if($validator->fails()) {
-                 return redirect()->route('contact')->withErrors($validator)->withInput();
+                 return redirect()->route('contacts')->withErrors($validator)->withInput();
              }
 
              $name = $request->name;
