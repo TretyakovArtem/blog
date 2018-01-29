@@ -13,7 +13,8 @@
             <!-- Right Side Of Navbar -->
 
             <ul class="nav navbar-nav">
-                <li><a href="{{ route('admin_add_post') }}">Создать</a></li>
+                <li><a href="{{ route('admin_add_post') }}">Новый пост</a></li>
+                <li><a href="{{ route('admin_tags') }}">Теги</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->

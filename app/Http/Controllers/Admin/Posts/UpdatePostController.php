@@ -27,6 +27,9 @@ class UpdatePostController extends Controller
             $post->name = $input['name'];
             $post->text = $input['text'];
 
+            $tags = $input['tag-select'];
+
+
             if ($request->hasFile('image')) {
                 $file = $request->file('image');
                 Image::make($file->getRealPath())->resize(360,203)->save();
@@ -35,7 +38,7 @@ class UpdatePostController extends Controller
                 $file->move(public_path() . '/assets/img', $input['image']);
             }
 
-            $post->save();
+            $post->tags()->attach($tags);
         }
 
         return redirect('admin');
@@ -47,10 +50,17 @@ class UpdatePostController extends Controller
 
     	$post = Post::find($id);
         $tags = Tag::all();
+        $var = [];
+
+
+        foreach ($tags as $tag) {
+            $var[$tag->id] = $tag->title;
+        }
+
 
     	$context = [
             'post' => $post,
-            'tags' => $tags
+            'tags' => $var
         ];
 
         return view('admin.posts.update', $context);

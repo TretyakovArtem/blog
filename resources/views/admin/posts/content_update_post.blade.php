@@ -21,17 +21,7 @@
             </div>
 
             <div class="form-group">
-                <select class="selectpicker" multiple title="Тег">
-                    @if(isset($tags) && is_object($tags))
-                        @foreach($tags as $tag)
-                            <option>{{ $tag->title }}</option>
-                        @endforeach
-                    @endif
-                </select>
-
-                <button class="btn btn-default">
-                    Создать тег
-                </button>
+                {!! Form::select('tag-select[]', $tags, null, ['class' => 'selectpicker', 'multiple', 'title' => 'Тег']) !!}
             </div>
 
             <div class="form-group">

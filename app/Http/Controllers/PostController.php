@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     function getPosts() {
-        $posts = Post::all();
+        $posts = Post::with('tags')->get();
         $lastPosts = Post::all()->take(4);
 
 
@@ -17,11 +17,7 @@ class PostController extends Controller
                 'posts' => $posts,
                 'lastPosts' => $lastPosts
             ]);
-
         }
-
-
-
         abort(404);
     }
 

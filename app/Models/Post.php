@@ -9,9 +9,8 @@ class Post extends Model
     protected $table = "posts";
 
 
-
     public function tags()
     {
-        return $this->hasMany(Tag::class, '');
+        return $this->belongsToMany(Tag::class, 'post_tags');
     }
 }
