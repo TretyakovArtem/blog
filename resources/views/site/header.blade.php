@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('posts') }}">Home</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="{{ route('contacts') }}">Контакты</a></li>
                 <li><a href="#">GitHub</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -15,6 +15,9 @@
 Route::get('/', ['uses' => 'PostController@getPosts', 'as'=>'posts']);
 Route::get('/posts/{id}', ['uses' => 'PostController@getPost', 'as'=>'post']);
 
+Route::get('/contacts', ['uses' => 'ContactController@show', 'as'=>'contacts']);
+Route::post('/contacts', ['uses' => 'ContactController@store', 'as'=>'contacts_p']);
+
 
 
 Route::group(['prefix'=>'admin', 'middleware'=>['auth','role:admin']], function() {
