@@ -26,8 +26,9 @@ class ContactController extends Controller
 
              $name = $request->name;
              $email = $request->email;
+             $text = $request->text;
 
-             Mail::to('artem.tretyakov.91@gmail.com')->send(new Contact($name, $email));
+             Mail::to(env('MAIL_RECIPIENT'))->send(new Contact($name, $email, $text));
         }
 
         return view('site.contacts');

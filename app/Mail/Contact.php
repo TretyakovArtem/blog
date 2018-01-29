@@ -13,16 +13,18 @@ class Contact extends Mailable
 
     protected $name;
     protected $email;
+    protected $text;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($name, $email)
+    public function __construct($name, $email, $text)
     {
         $this->name = $name;
         $this->email = $email;
+        $this->text = $text;
     }
 
     /**
@@ -34,7 +36,9 @@ class Contact extends Mailable
     {
         return $this->view('email')
             ->with([
-                'name' => $this->name
+                'name' => $this->name,
+                'email' => $this->email,
+                'text' => $this->text
             ]);
     }
 }
