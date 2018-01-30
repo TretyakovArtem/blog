@@ -52,6 +52,13 @@
                 </ul>
             </div>
         @endif
+        @if(isset($success))
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{{$success}}</li>
+                </ul>
+            </div>
+        @endif
         </div>
     </div>
 </div>
