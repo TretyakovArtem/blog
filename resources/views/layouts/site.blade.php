@@ -19,7 +19,18 @@
 
 @yield('header')
 
-@yield('content')
+<section id="blog-section" >
+    <div class="container">
+        <div class="row">
+            @yield('content')
+            @yield('sidebar')
+        </div>
+    </div>
+
+</section>
+
+
+
 
 <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
