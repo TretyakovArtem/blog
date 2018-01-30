@@ -28,15 +28,17 @@ class ContactController extends Controller
              $email = $request->email;
              $text = $request->text;
 
+            $context = array([
+                'success' => 'Ваше сообщение отправлено!'
+            ]);
+
              Mail::to(env('MAIL_RECIPIENT'))->send(new Contact($name, $email, $text));
 
-            return view('site.contacts', $text);
+            return view('site.contacts', $context);
         }
 
-        $context = [
-            'success' => 'Ваше сообщение отправлено!'
-        ];
 
-        return view('site.contacts', $context);
+
+        return view('site.contacts');
     }
 }

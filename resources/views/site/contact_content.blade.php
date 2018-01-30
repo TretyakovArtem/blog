@@ -43,6 +43,7 @@
     </div>
     <div class="row">
         <div class="col-lg-12">
+
         @if(count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -52,10 +53,10 @@
                 </ul>
             </div>
         @endif
-        @if(isset($success))
-            <div class="alert alert-danger">
+            @if(count($errors) == 0)
+            <div class="alert alert-success">
                 <ul>
-                    <li>{{$success}}</li>
+                    <li>Сообщение отправлено</li>
                 </ul>
             </div>
         @endif
