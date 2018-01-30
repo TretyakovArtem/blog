@@ -4,8 +4,8 @@
         <div class="col-lg-12">
             <div class="info">
                 <h3>Контакты</h3>
-                <p>E-mail: artem.tretyakov.91@inbox.ru</p>
-                <p>Telegram: @TretyakovArtem</p>
+                <p><b>E-mail:</b> artem.tretyakov.91@inbox.ru</p>
+                <p><b>Telegram:</b> @TretyakovArtem</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,8 @@
         </div>
 
         <div class="form-group col-md-12">
-            {!! Form::textarea('text', null, ['class'=>'form-control', 'placeholder'=> 'Сообщение', 'rows'=>'10']) !!}
+            {!! Form::label('text', 'Сообщение', ['class' => 'require']) !!}
+            {!! Form::textarea('text', null, ['class'=>'form-control', 'rows'=>'10']) !!}
         </div>
 
         <div class="form-group col-md-12">
