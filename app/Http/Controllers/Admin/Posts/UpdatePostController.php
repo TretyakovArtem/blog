@@ -39,6 +39,7 @@ class UpdatePostController extends Controller
             }
 
             $post->tags()->sync($tags);
+            $post->save();
         }
 
         return redirect('admin');
